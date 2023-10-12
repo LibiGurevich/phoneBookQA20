@@ -1,27 +1,21 @@
 package dto;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 public class UserDTOLombok {
-@Getter
-    @Setter
+@Setter
     @ToString
     @Builder
+@Getter
 
-public class UserDTOLombok {
+
+public static class UserDTOLombok {
 
     String email;
     String password;
 
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
 }
 }

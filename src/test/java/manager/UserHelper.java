@@ -39,6 +39,8 @@ public class UserHelper extends BaseHelper{
         clickBase(btnLoginForm);
     }
 
+
+
     public boolean validateMessageSuccessAfterLogin() {
         return isTextEqual(textSuccessLogin, "CONTACTS");
     }
