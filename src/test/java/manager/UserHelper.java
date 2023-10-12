@@ -1,6 +1,7 @@
 package manager;
 
 import dto.UserDTO;
+import dto.UserDTOLombok;
 import dto.UserDTOWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,6 +29,13 @@ public class UserHelper extends BaseHelper{
         clickBase(btnLoginNavigatorMenu);
         typeTextBase(inputEmailLoginForm, userDTO.getEmail());
         typeTextBase(inputPasswordLoginForm, userDTO.getPassword());
+        clickBase(btnLoginForm);
+    }
+
+    public void loginUserDtoLombok(UserDTOLombok user) {
+        clickBase(btnLoginNavigatorMenu);
+        typeTextBase(inputEmailLoginForm, user.getEmail());
+        typeTextBase(inputPasswordLoginForm, user.getPassword());
         clickBase(btnLoginForm);
     }
 
