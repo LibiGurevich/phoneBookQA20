@@ -1,8 +1,10 @@
 package manager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
@@ -54,6 +56,18 @@ public class BaseHelper {
             return false;
         }
 
+    }
+
+    public void clickByXY(By locator, double down, int right) {
+        Rectangle rect = findElementBase(locator).getRect();
+        int x = rect.getX() + (rect.getWidth() / right);
+        int y = (int)(rect.getY() + (rect.getHeight() / down));
+        Actions actions = new Actions(driver);
+        actions.moveByOffset(x, y).click().perform();
+    }
+
+    public boolean isElementExist(By locator){
+        return findElementsBase(locator).size() > 0;
     }
 
 }

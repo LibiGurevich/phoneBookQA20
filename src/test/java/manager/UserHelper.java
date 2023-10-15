@@ -18,6 +18,9 @@ public class UserHelper extends BaseHelper{
     By btnLoginForm = By.xpath("//button[@type='submit']");
     By textSuccessLogin = By.xpath("//*[text()='CONTACTS'] ");
 
+    By btnLogout = By.xpath("//*[text()='Sign Out']");
+
+
     public void login(UserDTO userDTO) {
         clickBase(btnLoginNavigatorMenu);
         typeTextBase(inputEmailLoginForm, userDTO.getEmail());
@@ -25,10 +28,10 @@ public class UserHelper extends BaseHelper{
         clickBase(btnLoginForm);
     }
 
-    public void login(UserDTOWith userDTO) {
+    public void loginWith(UserDTOWith userDTOWith) {
         clickBase(btnLoginNavigatorMenu);
-        typeTextBase(inputEmailLoginForm, userDTO.getEmail());
-        typeTextBase(inputPasswordLoginForm, userDTO.getPassword());
+        typeTextBase(inputEmailLoginForm, userDTOWith.getEmail());
+        typeTextBase(inputPasswordLoginForm, userDTOWith.getPassword());
         clickBase(btnLoginForm);
     }
 
@@ -36,7 +39,7 @@ public class UserHelper extends BaseHelper{
         clickBase(btnLoginNavigatorMenu);
         typeTextBase(inputEmailLoginForm, user.getEmail());
         typeTextBase(inputPasswordLoginForm, user.getPassword());
-        clickBase(btnLoginForm);
+        clickByXY(btnLoginForm, 422, 277);
     }
 
 
@@ -45,4 +48,12 @@ public class UserHelper extends BaseHelper{
         return isTextEqual(textSuccessLogin, "CONTACTS");
     }
 
+    public boolean btnLogoutExist() {
+        return isElementExist(btnLogout);
+    }
+
+
+    public void logout() {
+        clickBase(btnLogout);
+    }
 }
