@@ -5,14 +5,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Setter
-@Builder
-@ToString
 @Getter
-public class UserDTOLombok {
-
+@Setter
+@ToString
+@Builder
+public class UserDtoLombok {
     String email;
     String password;
-
 }
 

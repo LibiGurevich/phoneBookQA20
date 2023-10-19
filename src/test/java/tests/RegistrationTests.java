@@ -1,39 +1,108 @@
 package tests;
 
-import dto.UserDTOLombok;
-import javafx.scene.control.Alert;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import dto.UserDtoLombok;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import utils.RandomUtils;
 
-public class RegistrationTests extends BaseTests{
+public class RegistrationTests extends BaseTests {
 
-        @Test
-        public void positiveRegistration() {
-            String email = randomUtils.generateEmail(7);
-            UserDTOLombok user = UserDTOLombok().builder()
-                    .email(email)
-                    .password("slkru!Yi$")
-                    .build();
+    @BeforeMethod
+    public void preconditionsLogin() {
+        // app.getUserHelper().refreshPage();
+        //  app.navigateToMainPage();
+        logoutIfLogin();
 
-            app.getUserHelper().loginUserDtoLombok(user);
-            Assert.assertTrue(app.getUserHelper().validateMessageSuccessAfterLogin());
-        }
-
-    @Test
-    public void negativeRegistrationPasswordLetters() {
-        String email = randomUtils.generateEmail(7);
-        UserDTOLombok user = UserDTOLombok().builder()
-                .email(email)
-                .password("fffffffff")
-                .build();
-
-        app.getUserHelper().loginUserDtoLombok(user);
-        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        String text = alert.getText();
-        Assert.assertEquals(text, "Wrong email or password format");
-        alert.accept();
+        // user login
+        // user open web not login
     }
 
+
+
+
+    @Test
+    public void positiveRegistration() {
+        RandomUtils randomUtils = new RandomUtils();
+        String email = randomUtils.generateEmail(7);
+        UserDtoLombok user = UserDtoLombok.builder()
+                .email(email)
+                .password("123456Aa$")
+                .build();
+        app.getUserHelper().fillRegUserDtoLombok(user);
+        Assert.assertTrue(app.getUserHelper().validateContactTextDisplaysMainMenu());
+    }
+
+    @Test
+    public void negativeRegNoSymbol() {
+        RandomUtils randomUtils = new RandomUtils();
+        String email = randomUtils.generateEmail(7);
+        UserDtoLombok user = UserDtoLombok.builder()
+                .email(email)
+                .password("123456Aa")
+                .build();
+        app.getUserHelper().fillRegUserDtoLombok(user);
+        Assert.assertTrue(app.getUserHelper().validateMessageAlertWrongEmailPasswordCorrectReg());
+    }
+
+    @Test
+    public void negativeRegNoLetters() {
+        RandomUtils randomUtils = new RandomUtils();
+        String email = randomUtils.generateEmail(7);
+        UserDtoLombok user = UserDtoLombok.builder()
+                .email(email)
+                .password("12345699#")
+                .build();
+        app.getUserHelper().fillRegUserDtoLombok(user);
+        Assert.assertTrue(app.getUserHelper().validateMessageAlertWrongEmailPasswordCorrectReg());
+    }
+
+    @Test
+    public void negativeRegNoDigits() {
+        RandomUtils randomUtils = new RandomUtils();
+        String email = randomUtils.generateEmail(7);
+        UserDtoLombok user = UserDtoLombok.builder()
+                .email(email)
+                .password("Agshsjsks#")
+                .build();
+        app.getUserHelper().fillRegUserDtoLombok(user);
+        Assert.assertTrue(app.getUserHelper().validateMessageAlertWrongEmailPasswordCorrectReg());
+    }
+
+    @Test
+    public void negativeRegNoPassword() {
+        RandomUtils randomUtils = new RandomUtils();
+        String email = randomUtils.generateEmail(7);
+        UserDtoLombok user = UserDtoLombok.builder()
+                .email(email)
+                .password("")
+                .build();
+        app.getUserHelper().fillRegUserDtoLombok(user);
+        Assert.assertTrue(app.getUserHelper().validateMessageAlertWrongEmailPasswordCorrectReg());
+    }
+
+    @Test
+    public void negativeRegShortPassword() {
+        RandomUtils randomUtils = new RandomUtils();
+        String email = randomUtils.generateEmail(7);
+        UserDtoLombok user = UserDtoLombok.builder()
+                .email(email)
+                .password("Ag!1")
+                .build();
+        app.getUserHelper().fillRegUserDtoLombok(user);
+        Assert.assertTrue(app.getUserHelper().validateMessageAlertWrongEmailPasswordCorrectReg());
+    }
+
+    @Test
+    public void negativeRegNoLowercase() {
+        RandomUtils randomUtils = new RandomUtils();
+        String email = randomUtils.generateEmail(7);
+        UserDtoLombok user = UserDtoLombok.builder()
+                .email(email)
+                .password("ASDFGHL!1")
+                .build();
+        app.getUserHelper().fillRegUserDtoLombok(user);
+        Assert.assertTrue(app.getUserHelper().validateMessageAlertWrongEmailPasswordCorrectReg());
+    }
 
 }

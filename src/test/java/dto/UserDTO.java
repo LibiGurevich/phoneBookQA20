@@ -1,7 +1,6 @@
 package dto;
 
 public class UserDTO {
-
     String email;
     String password;
 
@@ -12,7 +11,6 @@ public class UserDTO {
         this.email = email;
         this.password = password;
     }
-
 
     public String getEmail() {
         return email;
@@ -29,5 +27,4 @@ public class UserDTO {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }

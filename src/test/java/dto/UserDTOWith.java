@@ -13,6 +13,14 @@ public class UserDTOWith {
         return password;
     }
 
+
+    //------------------------
+
+
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+
     public UserDTOWith withEmail(String email) { // like setter
         this.email = email;
         return this;
