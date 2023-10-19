@@ -1,0 +1,21 @@
+2023-10-19 18:02:50,670 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
+2023-10-19 18:03:50,781 INFO m.TestNGListener [TestNGListener.java:15] started test: negativeNoAtInEmail
+2023-10-19 18:03:52,661 INFO m.TestNGListener [TestNGListener.java:21] test success: negativeNoAtInEmail
+2023-10-19 18:04:52,758 INFO m.TestNGListener [TestNGListener.java:15] started test: negativeNoData
+2023-10-19 18:04:54,467 INFO m.TestNGListener [TestNGListener.java:21] test success: negativeNoData
+2023-10-19 18:05:54,632 INFO m.TestNGListener [TestNGListener.java:15] started test: negativeNoPassword
+2023-10-19 18:05:56,409 INFO m.TestNGListener [TestNGListener.java:21] test success: negativeNoPassword
+2023-10-19 18:06:56,540 INFO m.TestNGListener [TestNGListener.java:15] started test: negativeWrongPasswordNoDigits
+2023-10-19 18:06:58,237 INFO m.TestNGListener [TestNGListener.java:21] test success: negativeWrongPasswordNoDigits
+2023-10-19 18:07:58,324 INFO m.TestNGListener [TestNGListener.java:15] started test: negativeWrongPasswordNoLetters
+2023-10-19 18:07:59,977 INFO m.TestNGListener [TestNGListener.java:21] test success: negativeWrongPasswordNoLetters
+2023-10-19 18:08:08,612 INFO m.TestNGListener [TestNGListener.java:15] started test: negativeWrongPasswordWrongSymbol
+2023-10-19 18:08:08,613 INFO m.TestNGListener [TestNGListener.java:33] test skipped: negativeWrongPasswordWrongSymbol
+2023-10-19 18:08:08,615 INFO m.TestNGListener [TestNGListener.java:15] started test: positiveLoginUserDto
+2023-10-19 18:08:08,615 INFO m.TestNGListener [TestNGListener.java:33] test skipped: positiveLoginUserDto
+2023-10-19 18:08:08,615 INFO m.TestNGListener [TestNGListener.java:15] started test: positiveLoginUserDtoLombok
+2023-10-19 18:08:08,621 INFO m.TestNGListener [TestNGListener.java:33] test skipped: positiveLoginUserDtoLombok
+2023-10-19 18:08:08,623 INFO m.TestNGListener [TestNGListener.java:15] started test: positiveLoginUserDtoWith
+2023-10-19 18:08:08,625 INFO m.TestNGListener [TestNGListener.java:33] test skipped: positiveLoginUserDtoWith
+2023-10-19 18:08:08,627 INFO m.TestNGListener [TestNGListener.java:56] all code executed: [ResultMap map=[[TestResult name=negativeWrongPasswordNoLetters status=SUCCESS method=LoginTests.negativeWrongPasswordNoLetters()[pri:0, instance:tests.LoginTests@2a54a73f] output={null}], [TestResult name=negativeNoData status=SUCCESS method=LoginTests.negativeNoData()[pri:0, instance:tests.LoginTests@2a54a73f] output={null}], [TestResult name=negativeNoPassword status=SUCCESS method=LoginTests.negativeNoPassword()[pri:0, instance:tests.LoginTests@2a54a73f] output={null}], [TestResult name=negativeNoAtInEmail status=SUCCESS method=LoginTests.negativeNoAtInEmail()[pri:0, instance:tests.LoginTests@2a54a73f] output={null}], [TestResult name=negativeWrongPasswordNoDigits status=SUCCESS method=LoginTests.negativeWrongPasswordNoDigits()[pri:0, instance:tests.LoginTests@2a54a73f] output={null}]]]
+2023-10-19 18:08:08,627 INFO m.TestNGListener [TestNGListener.java:57] all code executed: [ResultMap map=[]]

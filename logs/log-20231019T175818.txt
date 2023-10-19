@@ -1,0 +1,5 @@
+2023-10-19 17:58:25,147 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
+2023-10-19 17:59:25,289 INFO m.TestNGListener [TestNGListener.java:15] started test: positiveLoginUserDto
+2023-10-19 17:59:27,257 INFO m.TestNGListener [TestNGListener.java:21] test success: positiveLoginUserDto
+2023-10-19 17:59:37,653 INFO m.TestNGListener [TestNGListener.java:56] all code executed: [ResultMap map=[[TestResult name=positiveLoginUserDto status=SUCCESS method=LoginTests.positiveLoginUserDto()[pri:0, instance:tests.LoginTests@2a54a73f] output={null}]]]
+2023-10-19 17:59:37,654 INFO m.TestNGListener [TestNGListener.java:57] all code executed: [ResultMap map=[]]
